@@ -8,6 +8,7 @@ function Piece(color,x,y,name){
     this.attack=(x,y)=>{
         let spot =board[x][y]
         //aqui se verifica se a casa esta sendo defendida e caso seja o rei atacando n pode permirtir
+        //se a pessa sendo atacada for um rei e ele n tiver pra onde fugir acaba o jogo se tiver so da check
         if(spot.attacked&&spot.defensers.indexOf(spot.piece.color)&& this.name=="K"){
             return false
         }
